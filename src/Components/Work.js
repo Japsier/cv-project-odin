@@ -55,11 +55,11 @@ class Work extends Component {
 
     render() {
         return(
-            <div>
+            <div className="workInfo">
                {
                 (this.state.submitted === false)
                 ?   <form onSubmit={this.onSubmit}>
-                    <label for="companyNameInput">Company Name</label>
+                    <label htmlFor="companyNameInput">Company Name</label>
                     <input
                         onChange={this.companyNameChange}
                         value={this.state.companyName}
@@ -67,7 +67,7 @@ class Work extends Component {
                         id="companyNameInput"
                     />
 
-                    <label for="positionTitleInput">Position at the company</label>
+                    <label htmlFor="positionTitleInput">Position at the company</label>
                     <input
                         onChange={this.positionTitleChange}
                         value={this.state.positionTitle}
@@ -75,14 +75,16 @@ class Work extends Component {
                         id="positionTitleInput"
                     />
 
-                    <label for="jobDescriptionInput">Describe your role at the company</label>
+                    <label htmlFor="jobDescriptionInput" className="jobDescriptionInput">Describe your role at the company</label>
                     <textarea
                         onChange={this.jobDescriptionChange}
                         value={this.state.jobDescription}
+                        rows="5" 
+                        cols="33"
                         id="jobDescriptionInput"
                     />
 
-                    <label for="dateStartedInput">First Day</label>
+                    <label htmlFor="dateStartedInput">First Day</label>
                     <input
                         onChange={this.dateStartedChange}
                         value={this.state.dateStarted}
@@ -90,7 +92,7 @@ class Work extends Component {
                         id="dateStartedInput"
                     />
 
-                    <label for="dateEndedInput">Last Day</label>
+                    <label htmlFor="dateEndedInput">Last Day</label>
                     <input
                         onChange={this.dateEndedChange}
                         value={this.state.dateEnded}

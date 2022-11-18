@@ -1,0 +1,154 @@
+body {
+    margin: 0;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    background-color: #94a3b8;
+    min-height: 100vh;
+}
+textarea {
+    resize: none;
+}
+header {
+    font-size: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e293b;
+    margin: 1rem;
+    border-radius: 20px;
+    padding: 0.6rem;
+    color: white;
+    font-weight: 600;
+    padding: 2rem;
+    min-width: 50%;
+}
+button {
+
+}
+button:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+.mainDiv > button {
+    align-self: center;
+    width: 7rem;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.generalInfo > form, .generalInfoDisplay {
+    display: grid;
+    position: relative;
+    grid-template-columns: 5rem 15rem 5rem 15rem;
+    grid-template-rows: 1.5rem 1.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    width: 100%
+}
+.generalInfoDisplay {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.generalInfo > form > button, .generalInfoDisplay > button {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    width: 10rem;
+    height: 2rem;
+    margin-top: 2rem;
+    align-self: center;
+    justify-self: center;
+
+}
+.generalInfoDisplay > button {
+    grid-column-end: 3;
+}
+input {
+    margin-right: 2rem;
+}
+.educationDisplay {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.educationInfo > form {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 5rem 15rem 5rem 15rem;
+    grid-template-rows: 1.5rem 1.5rem 1rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid black;
+}
+.educationInfo > form > .educationDate, .educationInfo > form > button {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    align-self: center;
+    justify-self: center;
+}
+.educationInfo > form > .educationDate {
+    display: flex;
+    gap: 1rem;
+}
+.educationInfoDisplay {
+    border-bottom: 1px solid black;
+    padding-bottom: 1rem;
+}
+.workInfo > form {
+    display: grid;
+    border-bottom: 1px solid black;
+    grid-template-columns: 8rem 15rem 8rem 15rem;
+    text-align: center;
+    align-items: center;
+    grid-template-rows: 2rem 1rem 8rem;
+    gap: 1rem;
+    padding-bottom: 2rem;
+}
+.workInfo input {
+    padding: 5px;
+}
+.workInfo > div {
+display: flex;
+flex-direction: column;
+border-bottom: 1px solid black;
+padding-bottom: 2rem;
+}
+.workInfo > div > button {
+    width: 8rem;
+    height: 2rem;
+    margin: 4px;
+    align-self: center;
+}
+.jobDescriptionInput, .workInfo textarea {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    justify-self: center;
+    align-self: center;
+}
+.jobDescriptionInput {
+    margin-top: 3rem;
+    margin-bottom: 0;
+}
+.workInfo textarea {
+    
+}
+.workInfo > form > button {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    justify-self:  center;
+    width: 8rem;
+    height: 2rem;
+    padding: 4px;
+}
+.workInfo, .educationInfo, .generalInfo {
+
+}
+
+footer {
+    padding: 1rem;
+}

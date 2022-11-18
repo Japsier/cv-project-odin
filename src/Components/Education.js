@@ -42,11 +42,10 @@ class Education extends Component {
 
     render() {
         return(
-            <div>
+            <div className="educationInfo">
                 {(this.state.submitted === false)
                 ?   <form onSubmit={this.onSubmit}>
-                        <h1>Education</h1>
-                        <label for="schoolNameInput">School Name</label>
+                        <label htmlFor="schoolNameInput">School Name</label>
                         <input 
                             type= "text"
                             onChange={this.schoolNameChange}
@@ -54,24 +53,25 @@ class Education extends Component {
                             id="schoolNameInput"
                         />
 
-                        <label for="titleStudyInput">Title of your Study</label>
+                        <label htmlFor="titleStudyInput">Title of your Study</label>
                         <input 
                             type= "text"
                             onChange={this.titleStudyChange}
                             value={this.state.titleStudy}
                             id="titleStudyInput"
                         />
-                        <label for="dateStudyInput">Date of Study</label>
-                        <input 
-                            type= "date"
-                            onChange={this.dateStudyChange}
-                            value={this.state.dateStudy}
-                            id="dateStudyInput"
-                        />
+                        <div className="educationDate">
+                            <label htmlFor="dateStudyInput">Date of Study</label>
+                            <input 
+                                type= "date"
+                                onChange={this.dateStudyChange}
+                                value={this.state.dateStudy}
+                                id="dateStudyInput"
+                            />
+                        </div>
                         <button type="submit">Submit Information</button>
                     </form>
-                :   <div>
-                        <h1>Education</h1>
+                :   <div className="educationInfoDisplay">
                         <h2>{this.state.schoolName}</h2>
                         <h2>{this.state.titleStudy}</h2>
                         <h2>{this.state.dateStudy}</h2>

@@ -49,7 +49,7 @@ class General extends Component {
 
     render() {
         return(
-            <div>
+            <div className="generalInfo">
                 {(this.state.submitted === false)
                 ?   <form onSubmit={this.onSubmit}>
                     <label htmlFor="firstNameInput">First Name</label>
@@ -76,7 +76,7 @@ class General extends Component {
                         id="emailInput"
                     />
     
-                    <label htmlFor="phoneInput">Phone Number</label>
+                    <label htmlFor="phoneInput">Phone</label>
                     <input 
                         onChange={this.handleChangePhone}
                         value={this.state.phone}
@@ -86,7 +86,7 @@ class General extends Component {
                     <button type="submit">Submit Information</button>
                             
                     </form>
-                    :  <div>
+                    :  <div className="generalInfoDisplay">
                     <h2 className = "firstNameDisplay">{this.state.firstName}</h2>
                     <h2 className = "lastNameDisplay">{this.state.lastName}</h2>
                     <h2 className = "emailDisplay">{this.state.email}</h2>
