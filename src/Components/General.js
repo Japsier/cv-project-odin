@@ -5,6 +5,7 @@ class General extends Component {
         super(props)
 
         this.state = {
+            submitted: false,
             firstName: "",
             lastName: "",
             email: "",
@@ -32,16 +33,30 @@ class General extends Component {
         })
     }
 
+    onSubmit = (e) => {
+        e.preventDefault()
+        this.setState({
+            submitted: true
+        })
+    }
+
+    editForm = () => {
+        this.setState({
+            submitted: false
+        })
+    }
+
 
     render() {
         return(
             <div>
-                <form>
+                {(this.state.submitted === false)
+                ?   <form onSubmit={this.onSubmit}>
                     <label htmlFor="firstNameInput">First Name</label>
                     <input 
-                        onChange={this.handleChangeFirstName}
+                         onChange={this.handleChangeFirstName}
                         value={this.state.firstName}
-                        type="text"
+                           type="text"
                         id="firstNameInput"
                     />
 
@@ -52,7 +67,7 @@ class General extends Component {
                         type="text"
                         id="lastNameInput"
                     />
-
+    
                     <label htmlFor="emailInput">E-mail</label>
                     <input 
                         onChange={this.handleChangeEmail}
@@ -60,7 +75,7 @@ class General extends Component {
                         type="email"
                         id="emailInput"
                     />
-
+    
                     <label htmlFor="phoneInput">Phone Number</label>
                     <input 
                         onChange={this.handleChangePhone}
@@ -69,10 +84,18 @@ class General extends Component {
                         id="phoneInput"
                     />
                     <button type="submit">Submit Information</button>
-                        
-                </form>
-            </div>
-        )
+                            
+                    </form>
+                    :  <div>
+                    <h2 className = "firstNameDisplay">{this.state.firstName}</h2>
+                    <h2 className = "lastNameDisplay">{this.state.lastName}</h2>
+                    <h2 className = "emailDisplay">{this.state.email}</h2>
+                    <h2 className= "phoneDisplay">{this.state.phone}</h2>
+                    <button onClick={this.editForm}>Edit Information</button>
+                    </div>
+                    }
+                </div>
+            )
     }
 }
 
