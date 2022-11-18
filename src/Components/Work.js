@@ -51,6 +51,9 @@ class Work extends Component {
             submitted: false
         })
     }
+    removeForm = (e) => {
+        e.target.parentNode.parentNode.remove()
+    }
 
 
     render() {
@@ -101,6 +104,7 @@ class Work extends Component {
                     />
 
                     <button type="submit">Submit Information</button>
+                    <button onClick={this.removeForm}>Remove</button>
 
                     </form>
                 :   <div>

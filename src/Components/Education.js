@@ -39,6 +39,10 @@ class Education extends Component {
             submitted: false
         })
     }
+    removeForm = (e) => {
+        console.log(e.target.parentNode.parentNode)
+        e.target.parentNode.parentNode.remove()
+    }
 
     render() {
         return(
@@ -70,12 +74,14 @@ class Education extends Component {
                             />
                         </div>
                         <button type="submit">Submit Information</button>
+                        <button onClick={this.removeForm}>remove</button>
                     </form>
                 :   <div className="educationInfoDisplay">
                         <h2>{this.state.schoolName}</h2>
                         <h2>{this.state.titleStudy}</h2>
                         <h2>{this.state.dateStudy}</h2>
                         <button onClick={this.editForm}>Edit</button>
+
                     </div>
                 }
             </div>
